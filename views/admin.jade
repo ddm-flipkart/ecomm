@@ -1,0 +1,65 @@
+extends layout
+
+block content
+  if is_signed_in = true
+    header(class="authors-header", style="background:black; height: 50px;")
+      ul
+        li foo
+        li bar
+
+  main
+    h1 #{title}
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+    section(style="font-family: 'Open Sans'; font-weight: 400; font-size: 30px; font-style: normal; width: 550px; margin: 0 auto;")
+
+    table
+      tr
+        td
+          label(for="") Title
+        td
+          input(type="text")
+          span &nbsp;&nbsp;&nbsp;
+          span (Max: 300 characters)
+      tr
+        td
+          input(type="checkbox", checked)
+        td
+          label(for="") Submitting in Markdown? (check this box)
+      tr
+        td(colspan=2)
+          label(for="") Content
+      tr
+        td(colspan=2)
+          textarea(cols=200, rows=5, width=100) Write your first article
+      tr
+        td
+          label(for="") Tags
+        td
+          input(type="text")
+    
+
+    h2 Category
+    table
+      tr
+        td(colspan=2)
+          label(for="") Add new category
+      tr
+        td(colspan=2)
+          input(type="text")
+      tr  
+        td
+          input(type="checkbox")
+        td
+          label(for="") Category 1
+      tr  
+        td
+          input(type="checkbox")
+        td
+          label(for="") Category 2
+    br
+    input(type="submit")
+    br
+    h2 Advanced options
+    label(for="") Other options
+    include ./fonts.jade
+  

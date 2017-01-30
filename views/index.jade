@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  if is_signed_in == true
+    header(class="authors-header", style="background:black; height: 50px;")
+      ul
+        li foo
+        li bar
+  
+  include content.jade
+  main
+    h1 #{title}
+      img(src="#{logo}", style="float:left", height="40")
+    div.row
+      div.col-xs-2 LOL
+      div.col-xs-2 LOL
+      div.col-xs-2 LOL
+      div.col-xs-2 LOL
+      div.col-xs-2 LOL
+      div.col-xs-2 LOL
+
+    div.row
+      div.col-xs-12 
+        input(type="text", class="form-control", placeholder="BIG LOL")
+      
+    div.row
+      div.col-xs-3 BOB
+      div.col-xs-3 BOB
+      div.col-xs-3 BOB
+      div.col-xs-3 BOB
+
+    div.row
+      div.col-xs-6 SOB
+        input(type="text", class="form-control", placeholder="SOB")
+      div.col-xs-6 SOB
+        input(type="text", class="form-control", placeholder="SOB")
+        input(type="text", class="form-control", placeholder=".col-xs-2")
